@@ -1,5 +1,6 @@
-package com.bigball.girl;
+package com.bigball.girl.controller;
 
+import com.bigball.girl.properties.GirlProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
