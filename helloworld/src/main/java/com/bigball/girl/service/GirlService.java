@@ -35,7 +35,7 @@ public class GirlService {
 
         Girl girl = girlRepository.getOne(id);
         Integer age = girl.getAge();
-        System.out.println(age);
+
         if (age < 10) {
             throw new GirlException(ResultEnum.PRIMARY_SCHOOL);
         } else if (age > 10 && age < 16) {

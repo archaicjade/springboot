@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class GirlController {
@@ -94,8 +93,7 @@ public class GirlController {
     }
 
     @GetMapping(value = "/girls/age/{age}")
-    public List<Girl>
-    girlListByAge(@PathVariable("age") Integer age) {
+    public List<Girl> girlListByAge(@PathVariable("age") Integer age) {
         return girlRepository.findByAge(age);
     }
 
