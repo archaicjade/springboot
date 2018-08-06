@@ -52,7 +52,6 @@ public class GirlController {
     @PostMapping(value = "/girls")
     public Result<Girl> girlAdd(@Valid Girl girl, BindingResult bindingResult) {
 
-        Result result = new Result();
         if (bindingResult.hasErrors()) {
 
             return ResultUtil.error(0, bindingResult.getFieldError().getDefaultMessage());
@@ -68,8 +67,9 @@ public class GirlController {
 
     //    查询一个女生
     @GetMapping(value = "/girls/{id}")
-    public Optional<Girl> girlFindOne(@PathVariable("id") Integer id) {
-        return girlRepository.findById(id);
+    public Result<Girl> girlFindOne(@PathVariable("id") Integer id) {
+        Girl girl = girlRepository.getOne(id);
+        return ResultUtil.success(girl);
     }
 
     //    更新接口
