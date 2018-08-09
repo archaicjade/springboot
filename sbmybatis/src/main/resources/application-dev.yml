@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://192.168.0.205:1433;databaseName=BitautoReview2
+    username: sa
+    password: baa
